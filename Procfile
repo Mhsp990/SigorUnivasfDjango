@@ -1,1 +1,1 @@
-web:gunicorn mainOficina.wsgi
+web: gunicorn mainOficina.wsgi --log-file -
