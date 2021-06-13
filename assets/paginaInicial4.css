@@ -1,0 +1,118 @@
+
+
+ @font-face {
+    font-family: 'OpenSansLight';
+    src: url('../fonts/OpenSans-Light.ttf');
+  }
+body{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    --cinza-principal: rgb(234, 233, 232);
+    --cinza-escuro-3: #2c2c2c;
+    --azul-nivel-1: #0C2D48;
+    --azul-nivel-2: #145DA0;
+    --azul-nivel-3: #2E8BC0;
+    --azul-nivel-4: #B1D4E0;
+    
+    font-family: 'Quicksand';
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{list-style: none; 
+    float: left;
+}
+.icon-contato, .icon-sobre{
+    font-size: 1.1em;
+    padding: 15px 25px;
+    margin: 10px 0;
+    color: var(--cinza-escuro-3);
+    cursor: pointer;
+}
+.icon-contato:hover, 
+.icon-sobre:hover{
+    background-color: var(--azul-nivel-2);
+    color: white;
+    border-radius: 5px;
+}
+a{text-decoration: none;}
+
+.logo img{
+    max-height: 70x;
+    height: 70px;
+}
+
+.header{
+    background-color: white;
+    height: 70px;
+}
+
+.header li{
+    display: inline-block;
+}
+.account-login-register{
+   float: right;
+  
+}
+.button-login, .button-register{
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 12px 5px;
+    font-size: 1.1em;
+    background-color: var(--azul-nivel-2);
+    color: white;
+    border-radius: 5px;
+}
+.button-login{ 
+    background-color: white; 
+    color: var(--cinza-escuro-3);
+    border: 1px solid var(--cinza-principal);
+}
+.button-login:active{background-color: var(--azul-nivel-2); color:  white;}
+.button-register{ margin-right: 30px;}
+.content{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: var(--azul-nivel-2);
+    width: 100%;
+    
+}
+.message-boas-vindas{
+    background-color: white;
+    margin: 50px;
+    height: 400px;  
+    width: 50%;
+    border-radius: 5px; 
+    text-align: center;
+}
+.content-message-boas-vindas{
+    width: 95%;
+    height: 95%;  
+}
+.maps-content{
+    width: 650px;
+    height: 400px;
+    margin: 100px 50px; 
+    background: green;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.maps-content img{
+    width: 120%;
+}
+.footer {
+    /*margin-top: 30px;*/
+    height: 55px;
+    background-color: black;
+  }
+
+  .ano-footer {
+      
+    padding: 15px 30px;
+    color: white;
+    float: right;
+  }

@@ -1,0 +1,31 @@
+{% extends 'produtos/produtos_list.html' %}
+{% load static %}
+
+
+{% block adicionar %}
+
+<div class="adicionar-produto" sytle="background-color: white">
+    <!--  <h2>Create an Awesome New Article</h2> -->
+
+    <form id="adicionar-produto-form" class="adicionar-produto-form"
+        action="{% if produto %} {% url 'produtos:update' pk=produto.codigo %} {% else %} {% url 'produtos:adicionar' %} {% endif %}"
+        method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <span class="salvar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFFFFF" class="bi bi-save-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v7.793L4.854 6.646a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l3.5-3.5a.5.5 0 0 0-.708-.708L8.5 9.293V1.5z" />
+            </svg>
+            <input type="submit" value="Salvar" sytle="width: 70px">
+        </span>
+    </form>
+    <div class="sucesso">
+        <p>Produto salvo com sucesso</p>
+    </div>
+</div>
+<!-- <script src="/static/slugify.js"></script> -->
+
+<script src="/static/formProdutos.js"></script>
+{%endblock%}

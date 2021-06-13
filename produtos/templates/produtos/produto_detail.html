@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<div class="produto-detail">
+    <div class="produto">
+        <h2>{{produto.nome}}( {{produto.codigo}} )</h2>
+        <p>Quantidade = {{produto.qntd}}</p>
+        <p>Valor = {{produto.valor_venda}}</p>
+
+    </div>
+
+</div>
+
+{% endblock %}

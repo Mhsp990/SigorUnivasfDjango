@@ -1,0 +1,60 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'paginaInicial4.css' %}">
+  
+</head>
+
+<body>
+    <div class="header">
+
+        <ul>
+            <li class="logo"><a href="#">
+                <img src="{% static 'logo-eletro-ar.png' %}" alt="Logo" /></a></li>
+            <li class="icon-contato">Contato</li> 
+            <li class="icon-sobre">Sobre</li> 
+            <aside class="account-login-register">
+                <a class="button-login"  href="{% url 'login' %}">Login</a>
+                <a class="button-register" href="{% url 'register' %}">Registrar</a>
+            </aside>
+        </ul>
+        
+    </div>
+    <div class="content">
+        {% block content-home %}
+        <div class="message-boas-vindas">
+            <div class="content-message-boas-vindas">
+
+                <h1>Sistema de Gerenciamento de Serviço Mecânico</h1>
+                <p style="text-align: start;">"On the other hand, we denounce with righteous indignation and dislike 
+                    men who are so beguiled and demoralized by the charms of pleasure of the moment,
+                     so blinded by desire, that they cannot foresee the pain and trouble that are bound 
+                     to ensue; and equal blame belongs to those who fail in their duty through weakness of
+                      will, which is the same as saying through shrinking from toil and pain. These cases 
+                      are perfectly simple and easy to distinguish. In a free hour, when our power of choice
+                       is untrammelled and when nothing prevents our being able to do what we like best,
+                        every pleasure is to be welcomed and every pain avoided. But in certain circumstances 
+                        and owing to the claims of duty or the obligations of business it will frequently occur...
+                        
+
+                </p>
+            </div>
+        </div>
+        <div id="map"class="maps-content">
+            <img src="{% static 'oficina.jpg' %}" alt="oficina" /></a></li>
+        </div>
+
+        {% endblock %}
+    </div>
+    <footer class="footer">
+        <span class="ano-footer">
+            © 2021 Sistema de Serviço Mecânico
+        </span>
+    </footer>
+
+</body>
+
+</html>
+
+<script src="/static/maps.js"></script>

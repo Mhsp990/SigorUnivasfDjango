@@ -1,0 +1,41 @@
+
+{% extends 'homepage.html'%}
+{% load static %}
+{% block content-home %}
+
+<link rel="stylesheet" href="{% static 'login-register3.css' %}">
+<form  id="form-register" method="POST" action="">
+    {% csrf_token %}
+    <div class="input-form">
+
+        <h2>Registre-se</h2>
+        <!-- {{form.username.label}} -->
+        <label>Seu nome</label>
+        {{form.username}}
+        
+        {{form.email.label}}
+        {{form.email}}
+       
+        
+        {{form.password1.label}}
+        {{form.password1}}
+        
+        {{form.password2.label}}
+        {{form.password2}}
+        
+    </div>
+    <div class="footer-box-register">
+
+        <span class="message-to-register">
+            <p>Já tem uma conta?</p>
+            <a href="{% url 'login' %}">Login</a>
+        </span>
+        <input type="submit" name="button-register" value="Registrar">
+    </div>
+
+    {{form.errors}}
+
+</form>
+
+{% endblock%}
+<script src="/static/login_resgister.js"></script>

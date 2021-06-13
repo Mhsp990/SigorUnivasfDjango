@@ -1,0 +1,18 @@
+{% extends 'veiculos/veiculos_list.html'%}
+{% load static %}
+
+
+{% block adicionar %}
+
+<form action="{% url 'veiculos:adicionarVeiculo' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+   <!--  {{ form }} -->
+
+  
+   {{form}} 
+   <input type="submit" value="Criar">
+</form>
+
+
+
+{% endblock %}

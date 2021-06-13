@@ -1,0 +1,21 @@
+{% extends 'homepage.html'%}
+{% load static %}
+{% block content-home %}
+<link rel="stylesheet" href="{% static 'login-register3.css' %}">
+<form id="form-login" method="POST" action="/accounts/login_page/">
+    {% csrf_token %}
+    <h2>Login</h2>
+    <input type="text" name="username" placeholder=" Seu e-mail">
+    <input type="password" name="password" placeholder=" Sua senha">
+    <span class="message-to-register">
+        <p>Ainda não tem um usuário?</p>
+        <a href="{% url 'register' %}">Registre-se</a>
+    </span>
+    <input type="submit" name="button-login" value="Login">
+	<a href="{% url 'password_reset' %}">Esqueceu sua senha?</a>
+</form>
+{% for message in messages %}
+    <p>{{message}}</p>
+{% endfor %}
+
+{% endblock%}

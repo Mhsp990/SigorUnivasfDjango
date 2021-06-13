@@ -1,0 +1,48 @@
+{% extends 'ordemServico/ordemServico_list.html' %}
+{% load static %}
+
+
+
+{% block adicionar %}
+
+<div class="ordemDeServico">
+
+   <form class="formOrdemDeServico" action="{% url 'ordemServico:criarOrdemServico' %}" method="POST"
+      enctype="multipart/form-data">
+      {% csrf_token %}
+      <label class="lb-cliente">Cliente</label>
+      {{form.cliente}}
+      <label class="lb-funcionario">Funcionário</label>
+      {{form.funcionario}}
+      <label class="lb-veicuos">Veículos</label>
+      {{form.veiculos}}
+      <label class="lb-produtos">Produtos</label>
+      {{form.produtos}}
+      <label class="lb-valor">Valor</label>
+      {{form.valor}}
+     
+      <label class="lb-descricao">Descrição</label>
+      {{form.descricao}}
+      <label class="lb-status">Status</label>
+      {{form.status}}
+        <!-- <labe>Cliente CPF</labe>
+         <input type="text" name="cpf_usuario" minlength="11" maxlength="11" required>
+         <label>Placa do Veículo</label>
+         <input type="text" name="placa_veiculo" minlength="7" maxlength="7" required>
+         {{form.status.label}}
+         {{form.status}}  -->
+        
+      <!-- <input type="submit" value="Criar"> -->
+      <span class="salvar">
+         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFFFFF" class="bi bi-save-fill"
+             viewBox="0 0 16 16">
+             <path
+                 d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v7.793L4.854 6.646a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l3.5-3.5a.5.5 0 0 0-.708-.708L8.5 9.293V1.5z" />
+         </svg>
+         <input type="submit" value="Criar" sytle="width: 70px">
+     </span>
+   </form>
+
+</div>
+
+{% endblock %}

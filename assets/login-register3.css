@@ -1,0 +1,217 @@
+body{
+    --cinza-principal: rgb(234, 233, 232);
+    --cinza-escuro-3: #2c2c2c;
+    --azul-nivel-1: #0C2D48;
+    --azul-nivel-2: #145DA0;
+    --azul-nivel-3: #2E8BC0;
+    --azul-nivel-4: #B1D4E0;
+    box-sizing: border-box;
+}
+#form-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    height: 350px;
+    background-color: white;
+    margin: 110px 50px;
+    border-radius: 5px;
+
+}
+#form-register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 420px;
+    height: 500px;
+    background-color: white;
+    margin: 35px 50px;
+    border-radius: 5px;
+}
+#form-register .input-form{
+    display: flex;
+    flex-direction: column;
+}
+#form-login h2 {color: var(--cinza-escuro-3)}
+#form-register h2{ text-align: center; margin-bottom: 30px; }
+#form-login input[name=username],
+#form-login input[name=password]{
+    display: inline-block;
+    height: 30px;
+    margin: 10px;
+    width: 250px;
+    border: 5px;
+    border: none;
+    outline: 1px solid var(--cinza-principal);
+    background-color: white;
+}
+#form-register input[name=username],
+#form-register input[name=email],
+#form-register input[name=password1],
+#form-register input[name=password2]{
+    display: inline-block;
+    height: 30px;
+    width: 350px;
+    margin-bottom: 10px;
+    border: 5px;
+    border: 1px solid var(--cinza-principal);
+    outline: none;
+    background-color: white;
+
+}
+
+#form-login input[name=button-login],
+#form-register input[name=button-register]{
+        margin: 20px;
+        width: 250px;
+        height: 38px;
+        background-color: var(--azul-nivel-2);
+        color: white;
+        outline: none;
+        border: none;
+		cursor: pointer;
+}
+
+.message-to-register p{
+    color: var(--cinza-escuro-3);
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.footer-box-register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .redefinicao_senha{
+    background-color: white;
+    width: 400px;
+    margin: 40px;
+    padding: 40px;
+    height: 410px;
+    border-radius: 5px;
+} */
+
+
+
+.title{
+    text-align: center;
+}
+
+.redefinicao_senha{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: flex-start; */
+    background-color: white;
+    margin: 150px 50px;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.redefinicao_senha h3{
+    width: 100%;
+}
+.redefinicao_senha input[name=email]{
+    /* display: inline-block; */
+    height: 30px;
+    width: 100%;
+ 
+    border: 5px;
+    border: 1px solid var(--cinza-principal);
+    outline: none;
+    background-color: white;
+    
+}
+.redefinicao_senha input[name=Enviar]{
+    margin: 20px;
+    width: 250px;
+    height: 38px;
+    background-color: var(--azul-nivel-2);
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+#redefinicao_senha{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.redefinicao_senha input[name=email],
+.redefinicao_senha label{
+    margin-bottom: 5px;
+    display: block;
+}
+.redefinicao_senha label{
+    align-self: start;
+}
+.password_reset_done {
+    width: 350px;
+    background-color: white;
+    margin: 50px;
+    padding: 40px;
+    height: 390px;
+    border-radius: 5px;
+}
+.password_reset_done p{
+    text-indent: 30px;
+}
+.password_reset_done p{
+    text-indent: 30px;
+}
+.password_reset_done h3{
+    text-align: center;
+}
+
+
+
+.password_reset_confirm {
+    background-color: white;
+    padding: 40px;
+    margin: 80px 50px;
+    width: 350px;
+    border-radius: 5px;
+}
+.password_reset_confirm  h2{
+    text-align: center;
+}
+.password_reset_confirm p{
+    text-indent: 30px;
+    padding: 10px;
+    
+}
+#password_reset_confirm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#password_reset_confirm input[name=new_password1],
+#password_reset_confirm input[name=new_password2]{
+    height: 30px;
+    width: 100%;
+ 
+    border: 5px;
+    border: 1px solid var(--cinza-principal);
+    outline: none;
+    background-color: white;
+    margin-bottom: 10px;
+    
+}
+#password_reset_confirm input[type=submit]{
+    margin: 20px;
+    width: 250px;
+    height: 38px;
+    background-color: var(--azul-nivel-2);
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+}

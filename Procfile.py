@@ -1,0 +1,1 @@
+web: gunicorn mainOficina1.9.1.wsgi

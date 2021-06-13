@@ -1,0 +1,154 @@
+{% extends 'base_layout.html'%}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<div class="content">
+    <div class="content-title">
+        <span class="content-subtitle">{{title}}</span>
+        <span class="content-botao">
+            <span class="icon-botao-voltar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFFFFF" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                </svg>
+            </span>
+            <a href="{{back}}"> Voltar</a>
+        </span>
+    </div>
+
+    {% block adicionar %}
+    <div class="action">
+        <span class="icon-botao-adicionar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FFFFFF" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+              </svg>
+        </span>
+         <span class="botao-adicionar">
+             <a href="{{add}}">Adicionar</a>
+        </span>
+
+    </div>
+    <div class="campo-pesquisa">
+        <div class="bord bar-pesquisar">
+            <form method="get">
+                <input type="text" id="digitar-pesquisa" name="search" placeholder=" Pesquisar por nome">
+
+        </div>
+        <div class="bord botao-pesquisar">
+
+            <button id="pesquisar">
+                <svg class="bi bi-search" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="white"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="block-table">
+
+        <table>
+            <thead>
+
+                <tr>
+                    {% for h in head %}
+                    <th>{{h}}</th>
+                    {% endfor %}
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ele in list %}
+
+                <tr>
+                    {% for c in ele.col %}
+                    <td>{{c}}</td>
+                    {% endfor %}
+                    {#<th>{{ produto.preco_compra|intcomma }}</th>#}
+                    {#<th>{{ produto.preco_venda|intcomma }}</th>#}
+
+                    <td class="action-icons">
+                        <span class="icon-adicionar">
+                            <a href="{{add}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFFFFF"
+                                    class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
+                                </svg>
+                            </a>
+
+                        </span>
+                        <span class="icon-editar">
+
+                            <a href="{{ele.get_edit_url}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFFFFF"
+                                    class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                    <path fill-rule="evenodd"
+                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                </svg>
+                            </a>
+                        </span>
+                        <span class="icon-excluir">
+                            <a href="{{ele.get_delete_url}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFFFFF"
+                                    class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 
+                                    1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                                </svg>
+                            </a>
+                        </span>
+                    </td>
+                    <div class="modal-delete">
+                        <div class="modal-delete-content">
+                            <span class="mensagem">Deseja realmente deletar este {{element}}?</span>
+                            <span class="close">&times;</span>
+                            <hr>
+                            <div class="modal-button-confirmacao">
+                                <span class="button-sim"><a href="{{ele.get_delete_url}}">Sim</a></span>
+                                <span class="button-nao">Não</span>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+                {% endfor%}
+               
+            </tbody>
+        </table>
+        <div class="pagination">
+            {% if list.has_previous %}
+            <span class="anterior">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                  </svg>
+                <a href="?page={{ list.previous_page_number }}">Anterior</a>
+            </span>
+            {% endif %}
+            <span class="numero">{{list.number}}</span>
+            {% if list.has_next %}
+            <span class="proximo">
+
+                <a  href="?page={{ list.next_page_number }}">Próxima</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                </svg>
+            </span>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <script src="/static/modal1.js"></script>
+
+    {% endblock %}
+</div>
+{% endblock%}
